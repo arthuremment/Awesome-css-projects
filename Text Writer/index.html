@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .body{
+            padding: 40px;
+        }
+        .container{
+            margin: 40px;
+            padding: 40px;
+        }
+        .text-container{
+            padding: 74px;
+            font-size: 48px;
+            font-weight: bold;
+            text-align: center;
+            color: #2b0d63;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div class="container">
+        <p class="text-container">Je suis un texte intelligent! Je m'écris tout seul :) <br>
+            Et tu continues de lire comme un idiot. <br>
+            Repéte aprés moi : "Je suis vraiment idiot". <br>
+            Merci !!!
+        </p>
+    </div>
+
+    <script>
+        window.addEventListener("load", animateText);
+
+        function animateText(){
+            const text = document.querySelector(".text-container")
+            let textContent = text.textContent;
+            let index = 0;
+
+            setInterval(() => {
+                index = (index + 1) % (textContent.length + 1);
+                text.innerHTML = textContent.substring(0, index);
+            }, 120);
+        }
+    </script>
+</body>
+</html>
